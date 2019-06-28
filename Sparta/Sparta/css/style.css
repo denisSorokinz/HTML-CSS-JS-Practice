@@ -1102,6 +1102,7 @@ table {
 
     .skills .top-right {
         flex-direction: column;
+        justify-content: flex-start !important;
     }
 
     .skills .top-item {
@@ -1112,6 +1113,10 @@ table {
 
     .skills .top-item:first-of-type {
         margin-top: 50px;
+    }
+
+    .skills .top-item:nth-of-type(2) {
+        margin-top: 100px;
     }
 
     .skills .medium-flex {
@@ -1417,11 +1422,19 @@ table {
         padding: 0 !important;
     }
 
+    .skills .container .row:first-of-type .top-side .top-right .top-item .item-number {
+        margin-right: 15px;
+    }
+
     .skills .container .row:first-of-type .top-side .top-left {
         flex: 0 0 20%;
         max-width: 80%;
         margin-top: 70px;
         text-align: center;
+    }
+
+    .skills .top-item:nth-of-type(2) {
+        margin-top: 50px;
     }
 
     .skills .container .row:nth-of-type(2) .bottom-side {
@@ -1635,6 +1648,12 @@ table {
     .footer .container div[class*="footer-item_"]:first-of-type,
     .footer .container div[class*="footer-item_"]:nth-of-type(2) {
         margin-top: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills .top-item:nth-of-type(2) {
+        margin-top: 30px;
     }
 }
 
