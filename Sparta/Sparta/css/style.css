@@ -1695,11 +1695,21 @@ table {
     .skills .container .bottom-side,
     .skills .container .bottom-side .bottom-left,
     .skills .container .bottom-side .bottom-right {
-        padding: 0;
+        padding: 0 !important;
     }
 
     .skills .container .bottom-side .bottom-left .text_ {
         margin: 0;
+    }
+
+    .skills .container .bottom-side .bottom-right .bottom-item {
+        padding: 0;
+        flex: 1 0 0;
+        max-width: 100%;
+    }
+
+    .skills .container .bottom-side .bottom-right .bottom-item:last-of-type {
+        margin-top: 45px;
     }
 
     .challenge .container .challenge-text_big {
