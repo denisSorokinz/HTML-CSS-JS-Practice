@@ -7,7 +7,7 @@
   letter-spacing: 0.92px;
 }
 
-.sidebar a, .promo-button:hover, .page-header_left-logo-inner, .page-header_right-item-ref, .amazon-echo_apps-items .amazon-echo_apps-item, .promo-1_left img, .promo-3_left img, .page-footer .page-footer_top-item-ref, .page-footer .page-footer_middle img {
+.sidebar a, .promo-button:hover, .page-header_left-logo-inner, .page-header_right, .page-header_right-item-ref, .amazon-echo_apps-items .amazon-echo_apps-item, .promo-1_left img, .promo-3_left img, .page-footer .page-footer_top-item-ref, .page-footer .page-footer_middle img {
   -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -webkit-animation-timing-function: ease-in-out;
@@ -399,6 +399,9 @@ body {
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
+  }
+  .page-header .sidebar {
+    display: none;
   }
   .amazon-echo img {
     display: block;

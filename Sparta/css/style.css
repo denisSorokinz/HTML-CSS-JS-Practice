@@ -102,11 +102,15 @@ table {
     margin-bottom: 137px;
 }
 
-.header-logo img {
+.header-logo .header-logo_image {
     background-size: cover;
     background-repeat: no-repeat;
     width: 247px;
     height: 89px;
+}
+
+.header-logo_sm-image {
+    display: none;
 }
 
 .header-special_course {
@@ -273,6 +277,10 @@ table {
     color: #4c4c4c;
 }
 
+.programme-background-text.programme-text_finish {
+    display: none;
+}
+
 .skills {
     background-color: black;
     padding: 200px 0 170px 0;
@@ -366,6 +374,11 @@ table {
     background-image: url("../images/safety-items-background.png");
     background-repeat: no-repeat;
     background-size: 87%;
+}
+
+.safety-item {
+    display: flex;
+    flex-direction: row;
 }
 
 .safety-item_number {
@@ -582,6 +595,11 @@ table {
 
 .photo {
     margin-top: 180px;
+    overflow: hidden;
+}
+
+.photo img {
+    min-width: 100%;
 }
 
 .instructor {
@@ -662,8 +680,8 @@ table {
     margin-top: 70px;
     background-image: url("../images/reviews-video-background.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 0;
+    background-size: contain;
+    background-position: 50% 50%;
     width: 100%;
     height: 642px;
 }
@@ -1084,16 +1102,21 @@ table {
 
     .skills .top-right {
         flex-direction: column;
+        justify-content: flex-start !important;
     }
 
     .skills .top-item {
         flex-basis: 0;
-        flex-grow: 1;
+        flex-grow: 0;
         max-width: 100%;
     }
 
     .skills .top-item:first-of-type {
         margin-top: 50px;
+    }
+
+    .skills .top-item:nth-of-type(2) {
+        margin-top: 100px;
     }
 
     .skills .medium-flex {
@@ -1294,5 +1317,438 @@ table {
 
     .geography .programme-text_big {
         letter-spacing: 0.04em;
+    }
+}
+
+@media (max-width: 750px) {    
+    .header-top {
+        position: relative;
+    }
+
+    .header-special_course {
+        position: absolute;
+        top: 110px;
+        left: 10px;
+    }
+
+    .header-survive_big {
+        font-size: 102px;
+    }
+
+    .header-survive_small {
+        font-size: 38px;
+    }
+
+    .programme .container {
+        background-image: none;
+    }
+
+    .programme-text_big {
+        white-space: nowrap;
+        text-align: center;
+        font-size: 100px;
+        letter-spacing: 0;
+    }
+
+    .programme-text_small {
+        font-size: 55px;
+        text-align: center;
+    }
+
+    .programme-background-text.programme-text_start {
+        position: relative;
+        left: 45%;
+        margin-bottom: 50px;
+    }
+
+    .programme-background-text.programme-text_start::before {
+        content: "";
+        position: absolute;
+        background-image: url("../images/expirience-item-background.png");
+        height: 21px;
+        width: 21px;
+        top: 40px;
+        left: 15px;
+    }
+
+    .programme div[class*="justify-content-end"]:last-of-type {
+        justify-content: flex-start !important;
+    }
+
+    .programme div[class*="justify-content-start"] .programme-item,
+    .programme div[class*="justify-content-end"] .programme-item {
+        flex-direction: column !important;
+        justify-content: center !important;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .programme-item_text {
+        margin: 20px 0 60px 0;
+    }
+
+    .programme-background-text.programme-text_finish {
+        display: inline-block;
+        position: relative;
+        left: 45%;
+        margin-top: 50px;
+    }
+
+    .programme-background-text.programme-text_finish::before {
+        content: "";
+        position: absolute;
+        width: 21px;
+        height: 21px;
+        top: -40px;
+        left: 15px;
+        background-image: url("../images/expirience-item-background.png");
+    }
+
+    .skills .container .row:first-of-type {
+        width: 75%;
+        padding: 0;
+        margin: 0 auto 0 auto;
+        background-image: url("../images/skills-inner-sm-background.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: 75% 0;
+    }
+    
+    .skills .container .row:first-of-type .top-side {
+        flex-direction: column !important;
+    }
+
+    .skills .container .row:first-of-type .top-side .top-right {
+        padding: 0 !important;
+    }
+
+    .skills .container .row:first-of-type .top-side .top-right .top-item .item-number {
+        margin-right: 15px;
+    }
+
+    .skills .container .row:first-of-type .top-side .top-left {
+        flex: 0 0 20%;
+        max-width: 80%;
+        margin-top: 70px;
+        text-align: center;
+    }
+
+    .skills .top-item:nth-of-type(2) {
+        margin-top: 50px;
+    }
+
+    .skills .container .row:nth-of-type(2) .bottom-side {
+        flex: 0 0 100%;
+        max-width: 100%;
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .bottom-left,
+    .bottom-right {
+        max-width: 100% !important;
+    }
+    
+    .skills .container .row:nth-of-type(2) .bottom-side .bottom-left {
+        display: flex;
+        margin-top: 40px !important;
+        flex: 0 0 10% !important;
+        flex-direction: row-reverse !important;
+        justify-content: center !important;
+        align-items: center !important;    
+    }
+
+    .skills .container .row:nth-of-type(2) .bottom-side .bottom-right {
+        flex: 1 0 10% !important;
+    }
+
+    .bottom-left .text_ {
+        margin-right: 25px;
+        align-self: flex-end;
+    }
+
+    .skills .container .item-number,
+    .skills .container .item-name {
+        margin: 0 0 15px 0;
+    }
+
+    .instructions {
+        height: auto;
+    }
+
+    .instructions-items .row {
+        justify-content: flex-start !important;
+        transform: none !important;
+    }
+
+    .instructions-items .row .programme-item {
+        align-items: center;
+        flex-direction: column !important;
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+
+    .instructions-and-safety .safety .safety-items {
+        background-image: url("../images/safety-items-sm-background.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 465px;
+    }
+
+    .instructions-and-safety .safety .safety-items .safety-item {
+        flex-direction: row;
+        max-width: 100%;
+        flex: 1 0 100%;
+    }
+
+    .instructions-and-safety .safety .safety-items .safety-item:nth-of-type(3),
+    .instructions-and-safety .safety .safety-items .safety-item:nth-of-type(4) {
+        align-items: center;
+    }
+
+    .instructions-and-safety .safety .safety-items .safety-item:last-of-type {
+        align-items: flex-end;
+    }
+
+    .instructions-and-safety .safety .safety-items .safety-item .text_description {
+        margin: 0 0 0 25px;
+    }
+
+    .challenge .container .row:first-of-type {
+        height: 450px;
+        flex-direction: column !important;
+    }
+
+    .challenge .container .row:first-of-type .challenge-md {
+        flex: 1 0 0;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .challenge .container .row:first-of-type .challenge-md .challenge-text_big {
+        max-width: 100%;
+    }
+
+    .challenge .container .row:first-of-type .challenge-md .challenge-text_small {        
+        margin-top: 20px;
+    }
+
+    .challenge .container .row:first-of-type .challenge-btn {
+        margin-top: 100px;
+        flex: 1 0 0;
+        max-width: 100%;
+    }
+
+    .expirience {
+        background-image: none;
+    }
+
+    .expirience #expirience-aside-text {
+        left: -400px !important;
+    }
+
+    .expirience .expirience-lines .first-line {
+        left: -100px;
+    }
+
+    .expirience .expirience-lines .second-line {
+        left: -25px;
+    }
+
+    .expirience .expirience-items {
+        max-width: 60%;
+        margin: 0;
+    }
+
+    .expirience .expirience-items .expirience-item {
+        margin: 0;
+        flex: 1 0 0;
+        max-width: 75%;
+    }
+
+    .programme-2-items-and-subscribe .row:first-of-type {
+        justify-content: flex-start !important;
+        padding-left: 1rem;
+    }
+
+    .programme-2-items-and-subscribe .row:first-of-type .programme-2-items {
+        flex-direction: column !important;
+    }
+
+    .programme-2-items-and-subscribe .row:first-of-type .programme-2-items div[class*="col-"] {
+        flex: 1 0 0;
+        max-width: 100%;
+    }
+
+    .programme-2-items-and-subscribe .row:first-of-type .programme-2-items div[class*="col-"]:last-of-type {
+        margin-top: 24px;
+    }
+
+    .programme-2-items-and-subscribe .row:last-of-type > div[class*="col-"] {
+        flex: 1 0 0;
+        max-width: 100%;
+        flex-direction: column !important;
+        align-items: center !important;
+        height: 170px;
+    }
+
+    .programme-2-items-and-subscribe .row:last-of-type > div[class*="col-"] div {
+        flex: 1 0 0;
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .programme-2-items-and-subscribe .row:last-of-type > div[class*="col-"] .btn {
+        background-size: contain;
+        background-position: 50% 0;
+        margin-top: 3rem;
+    }
+
+    .instructor .container .row:last-of-type {
+        flex-direction: column !important;
+        align-items: flex-start;
+        justify-content: space-between !important;
+    }
+
+    .instructor .container .row:last-of-type .instructor-photo {
+        align-self: center !important;
+    }
+
+    .instructor .container .row:last-of-type .instructor-cv .instructor-cv_title {
+        text-align: center;
+    }
+
+    .instructor .container .row:last-of-type .instructor-cv div[class*="col-"] {
+        flex: 1 0 0;
+        max-width: 100%;
+    }
+
+    .reviews .reviews-video {
+        margin: 0;
+    }
+
+    .reviews .reviews-comment {
+        margin: 0;
+    }
+
+    .questions .container .programme-text_small + div[class*="col-"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer .container {
+        flex-direction: column-reverse !important;
+        align-items: center;
+    }
+
+    .footer .container div[class*="footer-item_"]:first-of-type,
+    .footer .container div[class*="footer-item_"]:nth-of-type(2) {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills .top-item:nth-of-type(2) {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .programme-text_big {
+        font-size: 100px;
+    }
+
+    .programme-text_small {
+        font-size: 36px;
+    }
+
+    .header-logo_image {
+        display: none;
+    }
+
+    .header-logo_sm-image {
+        display: inline-block;        
+    }
+
+    .header-phone {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+
+    .skills .container .row:first-of-type {
+        height: 750px;
+    }
+
+    .skills .container .row:first-of-type .top-side .top-right {
+        justify-content: flex-end !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .skills .container .top-right .top-item:first-of-type {
+        margin-bottom: 45px;
+    }
+
+    .skills .container .bottom-side,
+    .skills .container .bottom-side .bottom-left,
+    .skills .container .bottom-side .bottom-right {
+        padding: 0 !important;
+    }
+
+    .skills .container .bottom-side .bottom-left .text_ {
+        margin: 0;
+    }
+
+    .skills .container .bottom-side .bottom-right .bottom-item {
+        padding: 0;
+        flex: 1 0 0;
+        max-width: 100%;
+    }
+
+    .skills .container .bottom-side .bottom-right .bottom-item:last-of-type {
+        margin-top: 45px;
+    }
+
+    .challenge .container .challenge-text_big {
+        font-size: 80px;
+    }
+
+    .expirience #expirience-aside-text {
+        top: 500px;
+        transform: rotate(70deg);
+    }
+
+    .expirience .expirience-lines .first-line {
+        display: none;
+    }
+
+    .expirience .expirience-lines .second-line {
+        left: -125px;
+    }
+
+    .expirience .expirience-items .expirience-item:nth-of-type(5) {
+        flex: 1 0 0 !important;
+        max-width: 100% !important;
+        margin: 85px 0 0 0;
+    }
+
+    .programme-2 {
+        margin-top: 350px;
+    }
+
+    .programme-2-items-and-subscribe .row:first-of-type .programme-2-items {
+        flex: 1 0 0;
+        max-width: 100%;
+    }
+
+    .instructor .container {
+        padding: 0;
+    }
+
+    .instructor-cv_items {
+        max-width: 95%;
     }
 }
