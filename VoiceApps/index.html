@@ -14,8 +14,8 @@
 
 <body>
     <div class="page-header">
-        <div class="container d-lg-flex flex-lg-row justify-content-lg-between">
-            <div class="page-header_left d-lg-flex flex-lg-row justify-content-lg-between align-items-lg-center">
+        <div class="container d-flex flex-row justify-content-between">
+            <div class="page-header_left d-flex flex-row justify-content-between align-items-center">
                 <div class="page-header_left-logo">
                     <a href="#" class="page-header_left-logo-inner to-home"></a>
                 </div>
@@ -23,7 +23,8 @@
                     Voice Apps
                 </div>
             </div>
-            <div class="page-header_right d-lg-flex flex-lg-row justify-content-lg-between align-items-lg-center">
+            <div
+                class="page-header_right d-flex flex-sm-row justify-content-between align-items-sm-center align-items-end flex-column">
                 <div class="page-header_right-item">
                     <a href="#" class="page-header_right-item-ref to-home">Home</a>
                 </div>
@@ -36,12 +37,20 @@
                 <div class="page-header_right-item">
                     <a href="#" class="page-header_right-item-ref to-build">Build</a>
                 </div>
+                <button class="openbtn" onclick="openNav()">&#9776;</button>
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#" class="page-header_right-item-ref to-home">Home</a>
+                    <a href="#" class="page-header_right-item-ref to-stuff">Stuff</a>
+                    <a href="#" class="page-header_right-item-ref to-apps">Apps</a>
+                    <a href="#" class="page-header_right-item-ref to-build">Build</a>
+                </div>
             </div>
         </div>
     </div>
     <div class="amazon-echo">
         <img src="assets/images/amazon-echo_background.jpg" alt="amazon echo background">
-        <div class="amazon-echo_apps-items d-lg-flex flex-lg-row justify-content-lg-between">
+        <div class="amazon-echo_apps-items d-flex flex-row justify-content-between">
             <div class="amazon-echo_apps-item">
                 <a href="#" class="amazon-echo_apps-item-ref"></a>
             </div>
@@ -57,22 +66,22 @@
     <div class="promo-1">
         <div class="container">
             <div class="row">
-                <div class="promo-1_left col-lg-6">
+                <div class="promo-1_left col-sm-6">
                     <img src="assets/images/promo-1-left_image.png" alt="promo 1 left image">
                 </div>
                 <div
-                    class="promo-1_right col-lg-6 d-lg-flex flex-lg-column justify-content-lg-around align-items-lg-center">
+                    class="promo-1_right col-sm-6 d-sm-flex flex-sm-column justify-content-sm-around align-items-sm-center">
                     <div class="promo-1_right-top">Get FREE Stuff!</div>
                     <div
-                        class="promo-1_right-items d-lg-flex flex-lg-column justify-content-lg-between align-items-lg-start">
-                        <div class="promo-1_right-item">
+                        class="promo-1_right-items d-sm-flex flex-sm-column justify-content-sm-between align-items-sm-start">
+                        <div class="promo-1_right-item mt-sm-3 mt-md-0">
                             VoiceApps and Amazon are continuously running promotions and providing incentives for
                             developing Alexa skills.
                         </div>
-                        <div class="promo-1_right-item">
+                        <div class="promo-1_right-item mt-sm-3 mt-md-0">
                             The next promotion will start later this month!
                         </div>
-                        <div class="promo-1_right-item">
+                        <div class="promo-1_right-item mt-sm-3 mt-md-0">
                             Building these skills with Voice Apps is quick and easy! Just customize one of our sample
                             skills and you're done!
                         </div>
@@ -83,23 +92,22 @@
     </div>
     <div class="promo-2">
         <div class="container">
-            <div class="row justify-content-lg-between">
-                <div
-                    class="promo-2_left col-lg-5 d-lg-flex flex-lg-column justify-content-lg-around align-items-lg-start">
+            <div class="row justify-content-between">
+                <div class="promo-2_left col-sm-6 d-flex flex-column justify-content-around align-items-start">
                     <div class="promo-2_left-top">
                         What can you create with Voice Apps
                     </div>
-                    <div class="promo-2_left-center">
+                    <div class="promo-2_left-center mt-md-0 mt-sm-3">
                         You can build almost any skill you can dream up! Our comprehensive tools allow you to take full
                         control of the Alexa platform!
                     </div>
-                    <div class="promo-2_left-bottom">
+                    <div class="promo-2_left-bottom mt-md-0 mt-sm-3">
                         <button class="promo-button">
                             GET YOUR FREE ACCOUNT
                         </button>
                     </div>
                 </div>
-                <div class="promo-2_right col-lg-5">
+                <div class="promo-2_right col-sm-5">
                     <img src="assets/images/promo-2-right_image.png" alt="promo 2 right image">
                 </div>
             </div>
@@ -126,8 +134,8 @@
         </div>
     </div>
     <div class="page-footer">
-        <div class="container col-lg-3 d-lg-flex flex-lg-column justify-content-lg-around">
-            <div class="page-footer_top d-lg-flex flex-lg-row justify-content-lg-between">
+        <div class="container col-lg-3 d-flex flex-column justify-content-around">
+            <div class="page-footer_top d-flex flex-row justify-content-between">
                 <div class="page-footer_top-item">
                     <a href="#" class="page-footer_top-item-ref to-home">Home</a>
                 </div>

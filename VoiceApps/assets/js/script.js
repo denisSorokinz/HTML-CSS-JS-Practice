@@ -1,3 +1,13 @@
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidebar").style.width = "100%";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+
 $(".to-home").click(function() {
     $('html,body').animate({
         scrollTop: 0},
@@ -6,32 +16,14 @@ $(".to-home").click(function() {
 
 $(".to-stuff").click(function() {
     $('html,body').animate({
-        scrollTop: $(".promo-1").offset().top + 100},
-        'slow');
-})
-
-$(".to-stuff").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".promo-1").offset().top - 100},
-        'slow');
-})
-
-$(".to-stuff").click(function() {
-    $('html,body').animate({
         scrollTop: $(".promo-1").offset().top - 58},
-        'fast');
-})
-
-$(".to-apps").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".promo-2").offset().top + 100},
         'slow');
 })
 
 $(".to-apps").click(function() {
     $('html,body').animate({
         scrollTop: $(".promo-2").offset().top - 58},
-        'fast');
+        'slow');
 })
 
 $(".to-build").click(function() {

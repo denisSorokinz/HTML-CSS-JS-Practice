@@ -1,4 +1,6 @@
 $content-color: #bab8b8
+$md-max: 991px
+$sm-max: 575px
 
 %header-text
     text-transform: uppercase
@@ -19,6 +21,59 @@ $content-color: #bab8b8
     border: 1px solid #ff0000
     background-color: #ff0000
     border-radius: 10px 10px 10px 10px
+
+%xs-row
+    
+
+.sidebar
+  height: 100vh
+  width: 100%
+  position: fixed
+  z-index: 1
+  top: 0
+  left: 0
+  background-color: #111
+  overflow-x: hidden
+  padding-top: 58px
+  opacity: .75
+  transition: 0.5s
+
+/* The sidebar links
+
+.sidebar
+  a
+    padding: 8px 8px 8px 32px
+    text-decoration: none
+    text-align: right
+    font-size: 25px
+    color: #fff
+    display: block
+    @extend %transition
+    &:hover
+      color: #f1f1f1
+  .closebtn
+    position: absolute
+    top: 7.5px
+    right: 20px
+    font-size: 40px
+
+/* When you mouse over the navigation links, change their color
+
+/* Position and style the close button (top right corner)
+
+/* The button used to open the sidebar
+
+.openbtn
+  font-size: 20px
+  cursor: pointer
+  background-color: #111
+  color: white
+  padding: 10px 15px
+  border: none
+  &:hover
+    background-color: #444
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation
 
 body
     padding: 58px 0 0 0
@@ -75,6 +130,9 @@ body
             &-ref:hover
                 @extend %header-text
                 @extend %btn-hover
+    .openbtn
+        display: none
+
 .amazon-echo
     //background-image: url("../images/amazon-echo_background.jpg")
     //background-size: contain
@@ -85,7 +143,7 @@ body
     position: relative
     img
         max-width: 100%
-        max-height: 100%
+        height: 100%
         margin: 0 auto
         display: block
         position: relative
@@ -103,7 +161,7 @@ body
             display: inline-block
             background-repeat: no-repeat
             background-size: contain
-            background-position: 50% 0
+            background-position: 50% 50%
             @extend %transition
             &:hover
                 opacity: 0.9
@@ -213,3 +271,103 @@ body
             color: $content-color
             font-size: 15px
             font-weight: 500
+@media (max-width: $md-max)
+    .container
+        max-width: 100%
+    .amazon-echo
+        img
+            display: block
+            margin: 0 auto
+            width: 150%
+            height: 80%
+            position: relative
+            top: 50px
+        &_apps
+            &-items
+                min-width: 25%
+                left: 40%
+    .promo
+        &-3
+            &_right
+                div
+                    margin: 1rem 0 0 0
+    .page-footer
+        .container
+            align-items: center
+        &_top
+            min-width: 60%
+@media (max-width: $sm-max)
+    .page-header        
+        &_right
+            justify-content: center
+            align-items: center
+            &-item
+                display: none
+        .openbtn
+            position: relative
+            display: block
+            max-height: 50%
+            top: 50%
+            background-color: transparent
+            border: none
+            outline: none
+            font-size: 25px
+            color: #fff
+            transform: translate(0, -50%)
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+            animation-timing-function: ease-in-out
+    .amazon-echo
+        img
+            display: block
+            margin: 0 auto
+            max-width: 100%
+            height: 80%
+            position: relative
+            top: 50px
+        &_apps
+            &-items
+                min-width: 40%
+                left: 30%
+    .promo
+        &-1
+            .row
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+            &_right
+                &-item
+                    margin: 1rem 0 0 0
+        &-2
+            .row
+                display: flex
+                flex-direction: column-reverse
+                justify-content: space-between
+            &_left
+                align-items: center !important
+                div
+                    margin: 1rem 0 0 0
+            &_right
+                img
+                    max-width: 75%
+                    max-height: 75%
+        &-3
+            &_left
+                img
+                    max-width: 25%
+                    margin: 0 auto
+                    display: block
+            &_right
+                div
+                    margin: 1rem 0 0 0
+            &-bottom
+                text-align: center
+        .page-footer
+            &_top
+                min-width: 50%
+@media (min-width: $sm-max)
+    .sidebar
+        display: none
+@media screen and (max-height: 450px)
+  .sidebar
+    a
+      font-size: 18px

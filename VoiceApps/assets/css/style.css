@@ -7,7 +7,7 @@
   letter-spacing: 0.92px;
 }
 
-.promo-button:hover, .page-header_left-logo-inner, .page-header_right-item-ref, .amazon-echo_apps-items .amazon-echo_apps-item, .promo-1_left img, .promo-3_left img, .page-footer .page-footer_top-item-ref, .page-footer .page-footer_middle img {
+.sidebar a, .promo-button:hover, .page-header_left-logo-inner, .page-header_right-item-ref, .amazon-echo_apps-items .amazon-echo_apps-item, .promo-1_left img, .promo-3_left img, .page-footer .page-footer_top-item-ref, .page-footer .page-footer_middle img {
   -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -webkit-animation-timing-function: ease-in-out;
@@ -24,6 +24,59 @@
   border-radius: 10px 10px 10px 10px;
 }
 
+.sidebar {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 58px;
+  opacity: .75;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  text-align: right;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 7.5px;
+  right: 20px;
+  font-size: 40px;
+}
+
+/* When you mouse over the navigation links, change their color */
+/* Position and style the close button (top right corner) */
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 body {
   padding: 58px 0 0 0;
   background-color: #18141a;
@@ -91,6 +144,10 @@ body {
   font-size: 15px;
 }
 
+.page-header .openbtn {
+  display: none;
+}
+
 .amazon-echo {
   height: 600px;
   -webkit-clip-path: ellipse(30% 35% at 51% 55%);
@@ -100,7 +157,7 @@ body {
 
 .amazon-echo img {
   max-width: 100%;
-  max-height: 100%;
+  height: 100%;
   margin: 0 auto;
   display: block;
   position: relative;
@@ -122,7 +179,7 @@ body {
   display: inline-block;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 50% 0;
+  background-position: 50% 50%;
 }
 
 .amazon-echo_apps-items .amazon-echo_apps-item:hover {
@@ -283,4 +340,141 @@ body {
   color: #bab8b8;
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 100%;
+  }
+  .amazon-echo img {
+    display: block;
+    margin: 0 auto;
+    width: 150%;
+    height: 80%;
+    position: relative;
+    top: 50px;
+  }
+  .amazon-echo_apps-items {
+    min-width: 25%;
+    left: 40%;
+  }
+  .promo-3_right div {
+    margin: 1rem 0 0 0;
+  }
+  .page-footer .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-footer_top {
+    min-width: 60%;
+  }
+}
+
+@media (max-width: 575px) {
+  .page-header_right {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-header_right-item {
+    display: none;
+  }
+  .page-header .openbtn {
+    position: relative;
+    display: block;
+    max-height: 50%;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    color: #fff;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  .amazon-echo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 80%;
+    position: relative;
+    top: 50px;
+  }
+  .amazon-echo_apps-items {
+    min-width: 40%;
+    left: 30%;
+  }
+  .promo-1 .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .promo-1_right-item {
+    margin: 1rem 0 0 0;
+  }
+  .promo-2 .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .promo-2_left {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  .promo-2_left div {
+    margin: 1rem 0 0 0;
+  }
+  .promo-2_right img {
+    max-width: 75%;
+    max-height: 75%;
+  }
+  .promo-3_left img {
+    max-width: 25%;
+    margin: 0 auto;
+    display: block;
+  }
+  .promo-3_right div {
+    margin: 1rem 0 0 0;
+  }
+  .promo-3-bottom {
+    text-align: center;
+  }
+  .promo .page-footer_top {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 575px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar a {
+    font-size: 18px;
+  }
 }
