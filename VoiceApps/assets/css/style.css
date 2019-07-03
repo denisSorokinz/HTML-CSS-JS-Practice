@@ -197,6 +197,14 @@ body {
   color: #bab8b8;
 }
 
+.promo-2_left-bottom {
+  z-index: 100;
+}
+
+.promo-2_left-bottom .promo-button {
+  outline: none;
+}
+
 .promo-2_right {
   background: -webkit-gradient(linear, left top, right top, from(#707070), color-stop(75%), to(#18141a));
   background: linear-gradient(to right, #707070, 75%, #18141a);
@@ -224,6 +232,14 @@ body {
 .promo-3_right-top {
   color: #bab8b8;
   font-size: 45px;
+}
+
+.promo-3-bottom {
+  z-index: 100;
+}
+
+.promo-3-bottom .promo-button {
+  outline: none;
 }
 
 .page-footer {
