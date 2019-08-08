@@ -76,12 +76,12 @@ function playBattle(warrior1, warrior2) {
                 break;
         }
         if(warrior1.health <= 0) {
-            console.log(warrior1, "looses")
+            console.log(warrior2, "wins")
             warrior2.health = secondWarriorHealth;
             return warrior1;
         }
         if(warrior2.health <= 0) {
-            console.log(warrior2, "looses")
+            console.log(warrior1, "wins")
             warrior1.health = firstWarriorHealth;
             return warrior2;
         }
