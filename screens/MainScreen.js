@@ -6,8 +6,11 @@ import ApiKeys from '../constants/ApiKeys';
 import * as firebase from 'firebase';
 
 export default class MainScreen extends Component {
+  static navigationOptions = {
+    headerShown: false
+  };
 
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       days: null
@@ -34,7 +37,7 @@ export default class MainScreen extends Component {
 
     return (
       <SafeAreaView style={styles.container}>
-        <DaysOfWeek days={this.state.days} />
+        <DaysOfWeek days={this.state.days} navigation={this.props.navigation} />
       </SafeAreaView>
     );//ADD SATURDAY IF EXISTS
   }

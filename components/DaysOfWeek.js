@@ -1,6 +1,6 @@
 import DayOfWeek from './DayOfWeek';
 import React, { Component } from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import styles from './styles';
 
 export default class DaysOfWeek extends Component {
@@ -11,7 +11,7 @@ export default class DaysOfWeek extends Component {
 
     getListItem({ item }) {
       return(
-        <DayOfWeek dayName={item} subjects={this.props.days[item]} />
+        <DayOfWeek dayName={item} subjects={this.props.days[item]} navigation={this.props.navigation}/>
       );
     }
 

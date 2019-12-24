@@ -13,7 +13,7 @@ const AppNavigator = createStackNavigator({
     },
     {
       initialRouteName: "Main",
-      headerMode: 'none'
+      headerMode: 'screen'
     }
   );
 

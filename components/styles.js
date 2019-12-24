@@ -16,7 +16,6 @@ export default StyleSheet.create({
   },
   dayText: {
     color: '#fff',
-    textTransform: "capitalize",
     marginLeft: 5,
     marginVertical: 1
   }
