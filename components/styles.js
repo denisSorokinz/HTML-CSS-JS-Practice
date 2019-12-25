@@ -5,8 +5,7 @@ export default StyleSheet.create({
     flex: 1
   },
   daysList: {
-    flexGrow: 1,
-    justifyContent: 'space-between'
+    flexGrow: 1
   },
   dayContainer: {
     flex: 0.2,

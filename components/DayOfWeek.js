@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, FlatList, TouchableHighlight } from 'react-native';
 import styles from './styles';
+import Subject from './Subject';
 
 export default class DayOfWeek extends Component {
 
@@ -10,16 +11,13 @@ export default class DayOfWeek extends Component {
 
   getListItem({ item }) {
     return(
-      <View>
-        <Text style={[styles.dayText, {fontSize: 15}]}>{ item } - {this.props.subjects[item]}</Text>
-      </View>
+      <Subject subjectName={item} subjectHometask={this.props.subjects[item]} />
     );
   }
 
-
   goToDayChanging() {
     const { navigate } = this.props.navigation;
-    navigate('DayChanging', {dayName: this.props.dayName});
+    navigate('DayChanging', {dayName: this.props.dayName, subjects: this.props.subjects});
   }
 
   render() {
@@ -31,10 +29,9 @@ export default class DayOfWeek extends Component {
           </View>
           <View>
             <FlatList
-              style={styles.daysList}
               data={Object.keys(this.props.subjects)}
               renderItem={({ item }) => this.getListItem({ item })}
-              keyExtractor={(item, index) => index.toString()}
+              keyExtractor={(index) => index.toString()}
             />
           </View>
         </View>

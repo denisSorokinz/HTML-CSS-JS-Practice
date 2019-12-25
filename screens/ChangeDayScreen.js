@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, FlatList } from 'react-native';
 import styles from './styles';
+import Subject from '../components/Subject';
 
 export default class ChangeDayScreen extends Component {
 
     static navigationOptions = (props) => {
         return {
+            headerVisible: true,
             title: props.navigation.state.params.dayName,
-            headerVisible: true
+            headerStyle: {
+                backgroundColor: '#000',
+            },
+            headerTitleStyle: {
+                color: '#fff',
+                textTransform: 'capitalize'
+            }
         }
     };
 
@@ -15,12 +23,28 @@ export default class ChangeDayScreen extends Component {
         super();
     }
 
+    getListItem({ item }) {
+      return(
+        <Subject 
+          subjectName={item} 
+          subjectHometask={this.props.navigation.state.params.subjects[item]} 
+          showInColumn={true} 
+        />
+      );
+    }
+
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     render() {
         return (
-            <SafeAreaView>
-              <Text>
-                  TEST
-              </Text>
+            <SafeAreaView style={[styles.container, {color: '#fff'}]}>
+            <FlatList
+              data={Object.keys(this.props.navigation.state.params.subjects)}
+              renderItem={({ item }) => this.getListItem({ item })}
+              keyExtractor={(index) => index.toString()}
+            />              
             </SafeAreaView>
         );
     }

@@ -24,7 +24,7 @@ export default class DaysOfWeek extends Component {
         return (
         <View style={styles.daysContainer}>
           <FlatList
-            contentContainerStyle={styles.dayList}
+            contentContainerStyle={styles.daysList}
             data={this.getDays()}
             renderItem={({ item }) => this.getListItem({ item })}
             keyExtractor={(index) => index.toString()}
