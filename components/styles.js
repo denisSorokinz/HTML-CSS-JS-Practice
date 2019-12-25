@@ -13,9 +13,24 @@ export default StyleSheet.create({
     borderBottomColor: '#fff',
     backgroundColor: '#2b2b2b'
   },
-  dayText: {
+  text: {
     color: '#fff',
     marginLeft: 5,
-    marginVertical: 1
+    fontSize: 17.5
+  },
+  subjectContainer: {
+    backgroundColor: '#2b2b2b',
+    marginBottom: 25,
+    justifyContent: 'space-between',
+    minHeight: 55
+  },
+  subjectText: {
+    fontSize: 35,
+  },
+  hometaskContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginRight: 5
   }
 });

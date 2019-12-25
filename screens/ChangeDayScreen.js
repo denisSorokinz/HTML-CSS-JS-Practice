@@ -44,7 +44,7 @@ export default class ChangeDayScreen extends Component {
               data={Object.keys(this.props.navigation.state.params.subjects)}
               renderItem={({ item }) => this.getListItem({ item })}
               keyExtractor={(index) => index.toString()}
-            />              
+            />
             </SafeAreaView>
         );
     }

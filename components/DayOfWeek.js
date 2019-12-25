@@ -25,7 +25,7 @@ export default class DayOfWeek extends Component {
       <TouchableHighlight onPress={() => this.goToDayChanging()}>
         <View style={styles.dayContainer} >
           <View>
-            <Text style={[styles.dayText, {fontSize: 25, textTransform: 'capitalize'}]}>{this.props.dayName ? this.props.dayName : 'Some day of week'}</Text>
+            <Text style={[styles.text, {fontSize: 25, textTransform: 'capitalize'}]}>{this.props.dayName ? this.props.dayName : 'Some day of week'}</Text>
           </View>
           <View>
             <FlatList
