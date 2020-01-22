@@ -11,13 +11,16 @@ export default class DayOfWeek extends Component {
 
   getListItem({ item }) {
     return(
-      <Subject subjectName={item} subjectHometask={this.props.subjects[item]} />
+      <Subject dayName={this.props.dayName} subjectName={item} subjectHometask={this.props.subjects[item]} />
     );
   }
 
   goToDayChanging() {
     const { navigate } = this.props.navigation;
-    navigate('DayChanging', {dayName: this.props.dayName, subjects: this.props.subjects});
+    navigate('DayChanging', 
+    {
+      dayName: this.props.dayName, subjects: this.props.subjects
+    });
   }
 
   render() {
@@ -25,7 +28,9 @@ export default class DayOfWeek extends Component {
       <TouchableHighlight onPress={() => this.goToDayChanging()}>
         <View style={styles.dayContainer} >
           <View>
-            <Text style={[styles.text, {fontSize: 25, textTransform: 'capitalize'}]}>{this.props.dayName ? this.props.dayName : 'Some day of week'}</Text>
+            <Text style={[styles.text, {fontSize: 25, textTransform: 'capitalize'}]}>
+              { this.props.dayName ? this.props.dayName : 'Some day of week' }
+            </Text>
           </View>
           <View>
             <FlatList

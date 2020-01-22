@@ -25,7 +25,8 @@ export default class ChangeDayScreen extends Component {
 
     getListItem({ item }) {
       return(
-        <Subject 
+        <Subject
+          dayName={this.props.navigation.state.params.dayName}
           subjectName={item} 
           subjectHometask={this.props.navigation.state.params.subjects[item]} 
           showInColumn={true} 
@@ -33,18 +34,14 @@ export default class ChangeDayScreen extends Component {
       );
     }
 
-    componentDidMount() {
-        console.log(this.props);
-    }
-
     render() {
         return (
-            <SafeAreaView style={[styles.container, {color: '#fff'}]}>
-            <FlatList
-              data={Object.keys(this.props.navigation.state.params.subjects)}
-              renderItem={({ item }) => this.getListItem({ item })}
-              keyExtractor={(index) => index.toString()}
-            />
+            <SafeAreaView style={styles.container}>
+              <FlatList
+                data={Object.keys(this.props.navigation.state.params.subjects)}
+                renderItem={({ item }) => this.getListItem({ item })}
+                keyExtractor={(index) => index.toString()}
+              />
             </SafeAreaView>
         );
     }

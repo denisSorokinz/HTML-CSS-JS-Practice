@@ -11,13 +11,13 @@ export default class DaysOfWeek extends Component {
 
     getListItem({ item }) {
       return(
-        <DayOfWeek dayName={item} subjects={this.props.days[item]} navigation={this.props.navigation}/>
+        <DayOfWeek dayName={item} subjects={this.props.schedule[item]} navigation={this.props.navigation}/>
       );
     }
 
-    getDays() {
-      let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-      return days;
+    getWeekDays() {
+      let weekDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+      return weekDays;
     }
 
     render() {
@@ -25,7 +25,7 @@ export default class DaysOfWeek extends Component {
         <View style={styles.daysContainer}>
           <FlatList
             contentContainerStyle={styles.daysList}
-            data={this.getDays()}
+            data={this.getWeekDays()}
             renderItem={({ item }) => this.getListItem({ item })}
             keyExtractor={(index) => index.toString()}
           />

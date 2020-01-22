@@ -9,20 +9,19 @@ export default StyleSheet.create({
   },
   dayContainer: {
     flex: 0.2,
+    marginBottom: 25,
     borderBottomWidth: 1,
-    borderBottomColor: '#fff',
     backgroundColor: '#2b2b2b'
   },
   text: {
     color: '#fff',
     marginLeft: 5,
-    fontSize: 17.5
+    fontSize: 20
   },
   subjectContainer: {
     backgroundColor: '#2b2b2b',
     marginBottom: 25,
-    justifyContent: 'space-between',
-    minHeight: 55
+    justifyContent: 'space-between'
   },
   subjectText: {
     fontSize: 35,
@@ -32,5 +31,8 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginRight: 5
+  },
+  textInputContainer: {
+    flex: 1
   }
 });
