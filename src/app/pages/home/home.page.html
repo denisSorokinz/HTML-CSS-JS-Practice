@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      To Do List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="6">
+        <ion-card color="light">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title>Add a ToDo</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Item Name</ion-label>
+              <ion-input clearInput [(ngModel)]="currentName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Description</ion-label>
+              <ion-input clearInput [(ngModel)]="currentDescription"></ion-input>
+            </ion-item>
+          </ion-card-content>
+          <ion-button expand="full" class="ion-no-margin" (click)="onItemSubmit()">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="8" class="ion-margin">
+        <ion-list>
+          <ion-item *ngFor="let item of items | async">
+            {{ item.name }} : {{ item.description }}
+            <ion-button slot="end" color="dark" (click)="onItemDelete(item)">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
