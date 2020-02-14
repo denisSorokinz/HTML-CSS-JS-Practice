@@ -9,14 +9,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-
-
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
+import { ToDoItemComponent } from './components/to-do-item/to-do-item.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ToDoItemComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

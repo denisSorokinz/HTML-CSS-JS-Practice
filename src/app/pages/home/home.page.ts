@@ -3,7 +3,6 @@ import { FirestoreService } from '../../services/firestore.service';
 import { ToDoItem } from '../../models/to-do-item';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { map } from 'rxjs/operators';
 
 @Component({

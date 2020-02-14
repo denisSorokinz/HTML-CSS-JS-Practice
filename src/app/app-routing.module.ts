@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ToDoItemComponent } from './components/to-do-item/to-do-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'todos', pathMatch: 'full' },
@@ -10,7 +11,7 @@ const routes: Routes = [
     },
     {
       path: ':todoId',
-      loadChildren: './pages/home/home.module#HomePageModule'
+      component: ToDoItemComponent
     }
   ]},
 ];
